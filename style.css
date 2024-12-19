@@ -10,3 +10,105 @@
     width: 1200px;
     margin: auto;
 }
+
+
+/* doctor */
+
+.doctor-container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.filters {
+    background-color: #f8f9fa;
+    width: 25%;
+}
+
+.doctors {
+    width: 100%;
+}
+
+.doctor-img {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    /* Ensures the image fills the area while maintaining aspect ratio */
+    border-radius: 50%;
+    /* Makes the image circular */
+    margin: 0 auto;
+    /* Centers the image horizontally */
+    display: block;
+    /* Ensures the image behaves like a block element for centering */
+    border: 2px solid #ddd;
+    /* Adds a border for aesthetics */
+    background-color: #f8f8f8;
+    /* Optional: Adds a fallback background color */
+}
+
+.doctor-card {
+    width: 260px;
+    height: 500px;
+    /* gap: 110px; */
+}
+
+.doctor-card {
+    /* padding: 10px; */
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    /* Optional border for clarity */
+    transition: transform 0.3s ease-in-out;
+}
+
+.doctor-card:hover {
+    transform: scale(1.05);
+    /* Slightly enlarge the card on hover */
+}
+
+.doctor-card .card-title {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.doctor-card .card-text {
+    font-size: 0.9rem;
+    color: #4e4c4d;
+    text-align: justify;
+}
+
+.card-body {
+    padding: 15px;
+    text-align: center;
+}
+
+
+/* .doctors {
+    text-align: center;
+} */
+
+
+/* search bar */
+
+.search-bar input {
+    height: 40px;
+    font-size: 1rem;
+    border-radius: 5px;
+    width: 95%;
+}
+
+.row.g-4 {
+    gap: 20px;
+    /* Increases spacing between columns */
+}
+
+
+/* doctor cars */
+
+.specialization-container {
+    display: flex;
+    flex-wrap: wrap;
+    /* Allows buttons to wrap to the next line if needed */
+    justify-content: start;
+    /* Aligns buttons to the start (left-aligned by default) */
+    /* gap: 8px; */
+    /* Adds consistent spacing between buttons */
+}
