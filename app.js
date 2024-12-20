@@ -25,7 +25,7 @@ const DisplayService = (services) => {
                 <div class="card-body p-3">
                     <h3 class="card-title h5 font-bold">${service.name}</h3>
                     <p class="card-text text-justify pb-2">${service.description.slice(0, 150)}...</p>
-                    <div><a href="${service.link}" class="btn btn-primary font-bold">Details</a></div>
+                    <div><a href="${service.link}" class="btn btn-primary font-semibold">Details</a></div>
                 </div>
             </div>
         `;
@@ -120,7 +120,7 @@ const DisplayDoctors = (doctors) => {
                         }
                     </div>
                     <p class="card-text mt-1">${doctor.descriptions ? doctor.descriptions.slice(0, 150) : "No description available"}...</p>
-                    <button class="btn btn-primary btn-sm mt-2">Details</button>
+                    <button class="btn btn-primary btn-sm mt-2 font-semibold">Details</button>
                 </div>
             </div>
         `;
@@ -181,11 +181,52 @@ const loadSpecialization = () => {
     loadDropdownData("https://hospital-management-with-rest-api.onrender.com/doctor/DoctorSpecialization/", "drop-drag");
 };
 
+const loadReview = () => {
+    fetch(
+      "https://hospital-management-with-rest-api.onrender.com/doctor/DoctorReview/"
+    )
+      .then((res) => res.json())
+      .then((data) => displayReview(data))
+    //   .then((data) => console.log(data))
+      .catch((error) => console.error("Error fetching reviews:", error));
+  };
+  
+  const displayReview = (reviews) => {
+    console.log(reviews);
+    const parent = document.getElementById("review-container");
+  
+    reviews.forEach((review) => {
+        // const reviewer = reviewers.find(r => r.id === review.reviewer);
+      const div = document.createElement("div");
+      div.classList.add("review");
+  
+      div.innerHTML = `
+        <div class="review-card">
+          <div class="image-container">
+            <img src="./Images/femal1.jpeg" alt="${review.reviewer_full_name || "Client"}" />
+          </div>
+          <h4 class="reviewer-name">${review.reviewer_full_name || "Anonymous"}</h4>
+          <p class="review-text">
+            ${review.body.slice(0,250) || "No review provided."}
+          </p>
+          <div class="rating">${review.rating}</div>
+        </div>
+      `;
+  
+      parent.appendChild(div);
+    });
+  };
+  
+
+  
+
+
 // Initialize App
 loadDoctors();
 loadServices();
 loadDesignation();
 loadSpecialization();
+loadReview();
 
 // Event Listeners for Filtering
 document.getElementById("drop-drag-designation").addEventListener("change", applyFilters);
@@ -194,3 +235,5 @@ document.getElementById("apply-filters-btn").addEventListener("click", applyFilt
 
 // Event Listener for Search Input
 document.getElementById("search").addEventListener("input", handleDebouncedSearch);
+  // Call the loadReview function when the page loads
+//   document.addEventListener("DOMContentLoaded", loadReview);

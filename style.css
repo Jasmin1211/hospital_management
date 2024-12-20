@@ -3,6 +3,14 @@
 @tailwind components;
 @tailwind utilities;
 
+body {
+  background-color: #e40d0d !important; /* Set the background color to your desired value */
+  color: #d80a0a; /* Optional: Set text color for better contrast */
+  /* margin: 0; 
+  padding: 0; 
+  font-family: Arial, sans-serif;  */
+}
+
 /* Carousel Styling */
 .carousel-inner img {
   height: 80vh; /* Set a fixed height for the carousel images */
@@ -120,20 +128,18 @@
   width: 100%; /* Full width within the parent container */
 }
 
-/* review cards */
-/* Review Card Container */
-.review {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 20px auto;
+/* Review Container */
+.review-container {
+  text-align: center;
+  padding: 20px;
+  background: none;
 }
 
 /* Review Card Styling */
 .review-card {
   position: relative;
-  width: 320px;
-  height: 400px;
+  /* width: 500px;
+  height: 50px; */
   padding: 20px;
   border-radius: 16px;
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
@@ -147,7 +153,7 @@
   box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
 }
 
-/* Center Image Styling */
+/* Image Styling */
 .image-container {
   width: 90px;
   height: 90px;
@@ -185,4 +191,41 @@
   font-size: 1.2rem;
   color: #f4b400;
   margin-top: 15px;
+}
+
+/* Swiffy Slider Styling */
+.swiffy-slider {
+  height: 470px;
+}
+
+.slider-container {
+  height: 100%;
+}
+
+/* footer */
+footer {
+  background-color: #00264d;
+}
+
+footer h5 {
+  color: #0d6efd; /* Highlighted headings */
+}
+
+footer a {
+  color: #ffffff;
+  font-weight: 500;
+}
+
+footer a:hover {
+  color: #0d6efd;
+  text-decoration: underline;
+}
+
+footer .social-icons a {
+  font-size: 20px;
+  transition: color 0.3s ease-in-out;
+}
+
+footer .social-icons a:hover {
+  color: #0d6efd;
 }

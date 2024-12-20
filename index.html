@@ -6,7 +6,7 @@
     <title>Hospital System</title>
 
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="./style.css" />
 
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -23,6 +23,11 @@
       href="https://cdn.jsdelivr.net/npm/swiffy-slider@1.6.0/dist/css/swiffy-slider.min.css"
       rel="stylesheet"
       crossorigin="anonymous"
+    />
+    <!-- Font Awesome CDN -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      rel="stylesheet"
     />
   </head>
 
@@ -290,72 +295,119 @@
         </div>
       </div>
 
-      <!-- reviewer slider  -->
+      <!-- Reviewer Slider -->
       <div class="review-container p-3 mt-3">
-        <h1 class="title text-center text-5xl pb-4 font-bold">
-          Client Rewiew for us
+        <h1 class="title text-center text-4xl pb-4 font-bold">
+          Client Reviews
         </h1>
-
-        <p class="description text-center w-50 m-auto text-x pb-5">
+        <p class="description text-center w-50 m-auto text-lg pb-2">
           Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam facere
           non voluptatum fugit <br />nemo odio natus repellat! Eum, pariatur?
-          Numquam ut, dignissimos fugit animi consectetur error
+          Numquam ut, dignissimos fugit animi consectetur.
         </p>
-      </div>
-
-      <div
-        class="swiffy-slider slider-item-show4 slider-nav-outside slider-nav-dark slider-nav-sm slider-nav-visible slider-nav-page slider-item-snapstart slider-nav-autoplay slider-nav-autopause slider-item-ratio slider-item-ratio-contain slider-item-ratio-32x9 bg-white shadow-lg py-3 py-lg-4"
-        data-slider-nav-autoplay-interval="2000"
-      >
-        <div class="slider-container">
-          <!-- Review Card 1 -->
-          <div class="review">
-            <div class="review-card">
-              <div class="image-container">
-                <img src="./Images/femal1.jpeg" alt="Client Image" />
-              </div>
-              <h4 class="reviewer-name">Reviewer 1</h4>
-              <p class="review-text">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Recusandae, obcaecati eos consequatur ad consequuntur non iste
-                nobis, laboriosam aspernatur autem nam ducimus expedita!
-              </p>
-              <div class="rating">★★★★★</div>
-            </div>
+        <div
+          class="swiffy-slider slider-item-show4 slider-nav-outside slider-nav-dark slider-nav-sm slider-nav-visible slider-nav-page slider-item-snapstart slider-nav-autoplay slider-nav-autopause slider-item-ratio slider-item-ratio-contain bg-white shadow-lg py-3 py-lg-4"
+          data-slider-nav-autoplay-interval="2000"
+        >
+          <div class="slider-container" id="review-container">
+            <!-- Dynamic reviews will be appended here -->
           </div>
-
-          <!-- Review Card 2 -->
-          <div class="review">
-            <div class="review-card">
-              <div class="image-container">
-                <img src="./Images/male1.jpeg" alt="Client Image" />
-              </div>
-              <h4 class="reviewer-name">Reviewer 2</h4>
-              <p class="review-text">
-                Aliquam accumsan diam vel elit ullamcorper, at pulvinar lacus
-                tincidunt. Nulla facilisi. Integer varius lectus at turpis
-                eleifend molestie.
-              </p>
-              <div class="rating">★★★★☆</div>
-            </div>
-          </div>
-
-          <!-- Add more review cards here as needed -->
+          <button
+            type="button"
+            class="slider-nav"
+            aria-label="Go left"
+          ></button>
+          <button
+            type="button"
+            class="slider-nav slider-nav-next"
+            aria-label="Go right"
+          ></button>
         </div>
-
-        <!-- Navigation Buttons -->
-        <button type="button" class="slider-nav" aria-label="Go left"></button>
-        <button
-          type="button"
-          class="slider-nav slider-nav-next"
-          aria-label="Go right"
-        ></button>
       </div>
     </main>
 
     <!-- footer -->
-    <footer class="mt-5 py-3 bg-light text-center text-gray-700">
-      <p>&copy; 2024 Hospital System. All Rights Reserved.</p>
+    <footer class="mt-5 py-4 bg-dark text-white">
+      <div class="container">
+        <div class="row">
+          <!-- About Section -->
+          <div class="col-md-4">
+            <h5 class="text-uppercase text-xl font-bold pb-2 pr-5">About Us</h5>
+            <p class="small text-justify">
+              We are dedicated to providing state-of-the-art healthcare
+              solutions, improving patient outcomes, and simplifying hospital
+              operations.
+            </p>
+          </div>
+
+          <!-- Quick Links -->
+          <div class="col-md-4  ps-5">
+            <h5 class="text-uppercase text-xl font-bold pb-2">Quick Links</h5>
+            <ul class="list-unstyled">
+              <li>
+                <a href="/about" class="text-white text-decoration-none small"
+                  >About Us</a
+                >
+              </li>
+              <li>
+                <a
+                  href="/services"
+                  class="text-white text-decoration-none small"
+                  >Our Services</a
+                >
+              </li>
+              <li>
+                <a href="/contact" class="text-white text-decoration-none small"
+                  >Contact</a
+                >
+              </li>
+              <li>
+                <a href="/faq" class="text-white text-decoration-none small"
+                  >FAQ</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <!-- Contact Information -->
+          <div class="col-md-4">
+            <h5 class="text-uppercase text-xl font-bold pb-2">Contact Us</h5>
+            <p class="small mb-1">
+              <i class="fas fa-map-marker-alt me-2"></i>123 Healthcare St.,
+              City, Country
+            </p>
+            <p class="small mb-1">
+              <i class="fas fa-phone me-2"></i>+01235789568
+            </p>
+            <p class="small mb-3">
+              <i class="fas fa-envelope me-2"></i>info@hospitalmanagement.com
+            </p>
+
+            <!-- Social Media Icons -->
+            <div class="d-flex">
+              <a href="#" class="text-white me-3"
+                ><i class="fab fa-facebook-f"></i
+              ></a>
+              <a href="#" class="text-white me-3"
+                ><i class="fab fa-twitter"></i
+              ></a>
+              <a href="#" class="text-white me-3"
+                ><i class="fab fa-linkedin-in"></i
+              ></a>
+              <a href="#" class="text-white"
+                ><i class="fab fa-instagram"></i
+              ></a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Footer Bottom -->
+        <div class="text-center mt-4 border-top pt-3">
+          <p class="small mb-0 fw-bold">
+            &copy; 2024 Hospital Management System. All Rights Reserved.
+          </p>
+        </div>
+      </div>
     </footer>
 
     <!-- JavaScript Files -->
@@ -365,6 +417,11 @@
     <script
       src="https://cdn.jsdelivr.net/npm/swiffy-slider@1.6.0/dist/js/swiffy-slider.min.js"
       crossorigin="anonymous"
+      defer
+    ></script>
+    <!-- Font Awesome Script -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/js/all.min.js"
       defer
     ></script>
   </body>
