@@ -1,163 +1,188 @@
+/* Import Tailwind CSS Base Styles */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Carousel Styling */
 .carousel-inner img {
-  height: 80vh;
-  object-fit: cover;
+  height: 80vh; /* Set a fixed height for the carousel images */
+  object-fit: cover; /* Ensure the image fills the space while maintaining its aspect ratio */
 }
 
+/* Service Section */
 .service-container {
-  width: 1200px;
-  margin: auto;
+  width: 1200px; /* Fixed width for the service container */
+  margin: auto; /* Center the container horizontally */
 }
 
-/* doctor */
-
+/* Doctor Section */
 .doctor-container {
-  display: flex;
-  flex-wrap: wrap;
+  display: flex; /* Use flexbox for layout */
+  flex-wrap: wrap; /* Allow wrapping of doctor cards */
 }
 
 .filters {
-  background-color: #f8f9fa;
-  width: 25%;
+  background-color: #f8f9fa; /* Light background for the filters */
+  width: 25%; /* Occupy 25% of the container width */
 }
 
 .doctors {
-  width: 100%;
+  width: 100%; /* Full width for doctor cards container */
 }
 
-/* .doctor-img {
-  width: 120px;
-  height: 120px;
-  object-fit: cover;
-  /* Ensures the image fills the area while maintaining aspect ratio */
-/* border-radius: 50%; */
-/* Makes the image circular */
-/* margin: 0 auto; */
-/* Centers the image horizontally */
-/* display: block; */
-/* Ensures the image behaves like a block element for centering */
-/* border: 2px solid #ddd; */
-/* Adds a border for aesthetics */
-/* background-color: #f8f8f8; */
-/* Optional: Adds a fallback background color */
-/* } */
-
 .doctor-img {
-  max-height: 10rem; /* Fixed height for the image */
+  max-height: 10rem; /* Fixed maximum height for doctor images */
   object-fit: cover; /* Maintain aspect ratio and fill the space */
 }
 
-/* .doctor-card {
-  width: 240px;
-  height: 500px;
-  /* gap: 110px; */
-/* }  */
-
 .doctor-card {
-  /* padding: 10px; */
-  width: 100%; /* Bootstrap column width handles responsive layout */
-  height: 100%; /* Ensure consistent height */
-  max-width: 18rem; /* Maximum width for cards */
-  min-height: 25rem;
-  /* Optional border for clarity */
-  transition: transform 0.3s ease-in-out;
+  width: 100%; /* Full width in the Bootstrap column */
+  height: 100%; /* Consistent height for cards */
+  max-width: 18rem; /* Maximum width for individual cards */
+  min-height: 25rem; /* Minimum height for consistency */
+  transition: transform 0.3s ease-in-out; /* Smooth hover animation */
 }
 
 .doctor-card:hover {
-  transform: scale(1.05);
-  /* Slightly enlarge the card on hover */
+  transform: scale(1.05); /* Slightly enlarge the card on hover */
 }
 
 .doctor-card .card-title {
-  font-size: 1.2rem;
-  font-weight: bold;
+  font-size: 1.2rem; /* Larger font size for the card title */
+  font-weight: bold; /* Bold font for emphasis */
 }
 
 .doctor-card .card-text {
-  font-size: 0.9rem;
-  color: #4e4c4d;
-  text-align: justify;
+  font-size: 0.9rem; /* Smaller font size for description */
+  color: #4e4c4d; /* Grayish text color */
+  text-align: justify; /* Justify the text for a cleaner look */
 }
 
 .card-body {
-  padding: 15px;
-  text-align: center;
+  padding: 15px; /* Add padding inside the card body */
+  text-align: center; /* Center-align the content */
 }
 
-/* .doctors {
-    text-align: center;
-} */
-
-/* search bar */
-
+/* Search Bar */
 .search-bar input {
-  height: 40px;
-  font-size: 1rem;
-  border-radius: 5px;
-  width: 95%;
+  height: 40px; /* Height of the search input */
+  font-size: 1rem; /* Font size for readability */
+  border-radius: 5px; /* Rounded corners */
+  width: 95%; /* Almost full width */
 }
 
 .row.g-4 {
-  gap: 20px;
-  /* Increases spacing between columns */
+  gap: 20px; /* Add spacing between rows */
 }
 
-/* doctor cars */
-
+/* Specialization Buttons (Non-clickable) */
 .specialization-container {
-  display: flex;
-  flex-wrap: wrap;
-  /* Allows buttons to wrap to the next line if needed */
-  justify-content: center;
-  /* Aligns buttons to the start (left-aligned by default) */
-  /* gap: 8px; */
-  /* Adds consistent spacing between buttons */
+  display: flex; /* Flex layout for buttons */
+  flex-wrap: wrap; /* Allow wrapping to the next line */
+  justify-content: center; /* Center-align the buttons */
+  pointer-events: none; /* Disable clicking */
+  cursor: default; /* Change cursor to default */
 }
 
-/* Search bar container */
-
+/* Search Bar Container */
 .search-bar {
   position: relative;
-  z-index: 10;
-  /* Ensure it appears on top of other elements */
+  z-index: 10; /* Ensure it appears above other elements */
 }
 
-/* Suggestions dropdown styling */
-
+/* Search Suggestions Dropdown */
 #search-suggestions {
-  position: absolute;
-  /* Floating dropdown */
-  top: calc(100% + 4px);
-  /* Slight margin from the input box */
+  position: absolute; /* Position the dropdown below the input */
+  top: calc(100% + 4px); /* Add a small margin below the input */
   left: 0;
-  border: 1px solid #ddd;
-  background-color: #fff;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  max-height: 200px;
-  /* Limit height and enable scrolling */
-  overflow-y: auto;
+  border: 1px solid #ddd; /* Light border for dropdown */
+  background-color: #fff; /* White background for dropdown */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  max-height: 200px; /* Limit height for scrolling */
+  overflow-y: auto; /* Enable vertical scrolling if needed */
 }
-
-/* Dropdown option styling */
 
 #search-suggestions a {
-  display: block;
-  padding: 10px;
-  text-decoration: none;
-  color: #000;
+  display: block; /* Full-width clickable area */
+  padding: 10px; /* Add padding for better clickability */
+  text-decoration: none; /* Remove underline from links */
+  color: #000; /* Black text color */
 }
 
 #search-suggestions a:hover {
-  background-color: #f1f1f1;
-  color: #000;
+  background-color: #f1f1f1; /* Highlight background on hover */
+  color: #000; /* Ensure text remains black */
 }
 
-/* Input group styling to reduce width */
-
+/* Restrict Search Input Width */
 .input-group {
-  max-width: 500px;
-  /* Restrict the width of the search input group */
+  max-width: 500px; /* Restrict maximum width */
+  width: 100%; /* Full width within the parent container */
+}
+
+/* review cards */
+/* Review Card Container */
+.review {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px auto;
+}
+
+/* Review Card Styling */
+.review-card {
+  position: relative;
+  width: 320px;
+  height: 400px;
+  padding: 20px;
+  border-radius: 16px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  background: #fff;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.review-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+}
+
+/* Center Image Styling */
+.image-container {
+  width: 90px;
+  height: 90px;
+  margin: 0 auto 10px;
+  border-radius: 50%;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.image-container img {
   width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Reviewer Name */
+.reviewer-name {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #333;
+  margin: 10px 0;
+}
+
+/* Review Text */
+.review-text {
+  font-size: 1rem;
+  color: #555;
+  text-align: justify;
+  line-height: 1.5;
+  padding: 0 10px;
+}
+
+/* Rating Section */
+.rating {
+  font-size: 1.2rem;
+  color: #f4b400;
+  margin-top: 15px;
 }

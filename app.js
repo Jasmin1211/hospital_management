@@ -35,12 +35,16 @@ const DisplayService = (services) => {
 
 // Fetch and Load Doctors
 const loadDoctors = (search = "", filters = {}) => {
-    console.log(search);
     const { designation, specialization } = filters;
 
-    let apiUrl = `https://hospital-management-with-rest-api.onrender.com/doctor/DoctorList/?search=${search}`;
-    if (designation) apiUrl += `&designation=${designation}`;
-    if (specialization) apiUrl += `&specialization=${specialization}`;
+    let apiUrl = `https://hospital-management-with-rest-api.onrender.com/doctor/DoctorList/`;
+    const queryParams = new URLSearchParams();
+
+    if (search) queryParams.append("search", search);
+    if (designation) queryParams.append("designation", designation);
+    if (specialization) queryParams.append("specialization", specialization);
+
+    apiUrl += `?${queryParams.toString()}`;
 
     document.getElementById("loading").style.display = "block";
     document.getElementById("no-results").style.display = "none";
@@ -54,9 +58,11 @@ const loadDoctors = (search = "", filters = {}) => {
         })
         .then((data) => {
             document.getElementById("loading").style.display = "none";
-            if (data.results.length === 0) {
+
+            if (!data.results || data.results.length === 0) {
                 document.getElementById("no-results").style.display = "block";
             } else {
+                document.getElementById("no-results").style.display = "none"; // Hide "No Results" message
                 DisplayDoctors(data.results);
             }
         })
@@ -64,6 +70,13 @@ const loadDoctors = (search = "", filters = {}) => {
             document.getElementById("loading").style.display = "none";
             console.error("Failed to fetch doctors:", error);
         });
+};
+
+// Apply Filters
+const applyFilters = () => {
+    const designation = document.getElementById("drop-drag-designation").value;
+    const specialization = document.getElementById("drop-drag").value;
+    loadDoctors("", { designation, specialization });
 };
 
 // Debounced Search Handler
@@ -115,7 +128,6 @@ const DisplayDoctors = (doctors) => {
     });
 };
 
-
 // Display Live Suggestions
 const showSearchSuggestions = (searchResults) => {
     const suggestionsContainer = document.getElementById("search-suggestions");
@@ -141,7 +153,6 @@ const showSearchSuggestions = (searchResults) => {
     }
 };
 
-
 // Reusable Function to Load Dropdown Data
 const loadDropdownData = (url, dropdownId) => {
     fetch(url)
@@ -153,10 +164,7 @@ const loadDropdownData = (url, dropdownId) => {
             data.forEach((item) => {
                 const option = document.createElement("option");
                 option.value = item.slug; // Use slug for option value
-                // option.innerText = item.name; // Use name for option text
-                option.innerHTML = `
-                <options onclick="loadDoctors('${item.name}')">${item.name}</options>
-                `
+                option.textContent = item.name; // Properly set the text for the option
                 dropdown.appendChild(option); // Append option to dropdown
             });
         })
@@ -173,15 +181,16 @@ const loadSpecialization = () => {
     loadDropdownData("https://hospital-management-with-rest-api.onrender.com/doctor/DoctorSpecialization/", "drop-drag");
 };
 
-
-const handelSearch= () => {
-    const value = document.getElementById("search").value;
-    // console.log(value);
-    loadDoctors(value);
-}
-
 // Initialize App
 loadDoctors();
 loadServices();
 loadDesignation();
 loadSpecialization();
+
+// Event Listeners for Filtering
+document.getElementById("drop-drag-designation").addEventListener("change", applyFilters);
+document.getElementById("drop-drag").addEventListener("change", applyFilters);
+document.getElementById("apply-filters-btn").addEventListener("click", applyFilters);
+
+// Event Listener for Search Input
+document.getElementById("search").addEventListener("input", handleDebouncedSearch);
