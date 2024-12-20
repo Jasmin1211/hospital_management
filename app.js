@@ -120,7 +120,7 @@ const DisplayDoctors = (doctors) => {
                         }
                     </div>
                     <p class="card-text mt-1">${doctor.descriptions ? doctor.descriptions.slice(0, 150) : "No description available"}...</p>
-                    <button class="btn btn-primary btn-sm mt-2 font-semibold">Details</button>
+                    <button class="btn btn-primary btn-sm mt-2 font-semibold"><a target="_blank" href="doc_details.html?doctorId=${doctor.id}">Details</a></button>
                 </div>
             </div>
         `;

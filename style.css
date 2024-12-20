@@ -3,14 +3,6 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
-  background-color: #e40d0d !important; /* Set the background color to your desired value */
-  color: #d80a0a; /* Optional: Set text color for better contrast */
-  /* margin: 0; 
-  padding: 0; 
-  font-family: Arial, sans-serif;  */
-}
-
 /* Carousel Styling */
 .carousel-inner img {
   height: 80vh; /* Set a fixed height for the carousel images */
@@ -228,4 +220,98 @@ footer .social-icons a {
 
 footer .social-icons a:hover {
   color: #0d6efd;
+}
+
+/* doctor details  */
+/* Container Styles */
+/* Container Styles */
+#doc-details-container {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 30px;
+  max-width: 1200px;
+  margin: 50px auto;
+  padding: 20px;
+  background-color: #f8f9fa; /* Light background */
+  border-radius: 12px;
+  border: 1px solid #007bff;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+}
+
+.doctors-img {
+  padding-top: 15px;
+}
+/* Doctor Image Section */
+.doctors-img img {
+  width: 100%;
+  max-width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  border: 2px solid #007bff;
+  object-fit: cover;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  margin: auto;
+}
+
+/* Doctor Info Section */
+.doc-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: left;
+  gap: 15px;
+}
+
+.doc-info h1 {
+  font-size: 2.2rem;
+  color: #000;
+  font-weight: bold;
+}
+
+.doc-info h5 {
+  font-size: 1.5rem;
+  color: #6c757d; /* Muted text for designation */
+}
+
+.doc-info h6 {
+  font-size: 1.2rem;
+  color: #495057; /* Secondary text */
+}
+
+.doc-info p {
+  font-size: 1rem;
+  color: #343a40; /* Darker text for description */
+  line-height: 1.6;
+}
+
+.doc-info h4 {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #007bff; /* Fee color */
+}
+
+/* Button Styles */
+.doc-info .btn {
+  background-color: #000;
+  color: #fff;
+  border: 3px solid #007bff;
+  border-radius: 30px;
+  padding: 12px 30px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+  width: 300px;
+}
+
+.doc-info .btn:hover {
+  background-color: #091a2c;
+  border-color: #000;
+  color: #fff;
+  border: 3px solid #007bff;
+}
+
+.doc-info .btn:focus {
+  outline: none;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
 }
