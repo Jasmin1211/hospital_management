@@ -61,52 +61,57 @@
 
           <!-- Align Logout to the Right -->
           <ul class="navbar-nav ms-auto">
-            <!-- <li class="nav-item">
-              <a
-                class="nav-link text-white bg-primary px-3 py-2 font-bold rounded-md hover:bg-secondary"
-                href="./login.html"
-                >Login</a
-              >
-            </li> -->
+            <!-- Profile with a round clickable icon -->
             <li class="nav-item">
               <a
-                class="nav-link text-white bg-primary px-3 py-2 font-bold rounded-md hover:bg-secondary"
-                href="#"
-                >Logout</a
+                class="nav-link text-white bg-primary px-3 py-2 font-bold rounded-md hover:bg-secondary d-flex align-items-center gap-2"
+                href="./profile.html"
               >
-            </li>
-          </ul>
-        </div>
-      </nav>
+                <img
+                  src="./Images/profile.png"
+                  alt="Profile"
+                  class="rounded-circle"
+                  style="width: 20px; height: 20px;"
+                />
+                <span>Profile</span>
+              </a>
+                    </li>
+
+                    <!-- Logout with a gap to the right -->
+                    <li class="nav-item ms-4">
+                        <a class="nav-link text-white bg-primary px-3 py-2 font-bold rounded-md hover:bg-secondary" href="#">
+                Logout
+              </a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
 
     </header>
 
     <main>
 
 
+        <!--  -->
 
+        <!-- footer -->
+        <footer class="mt-5 py-4 bg-dark text-white">
+            <div class="container">
+                <div class="row">
+                    <!-- About Section -->
+                    <div class="col-md-4">
+                        <h5 class="text-uppercase text-xl font-bold pb-2 pr-5">About Us</h5>
+                        <p class="small text-justify">
+                            We are dedicated to providing state-of-the-art healthcare solutions, improving patient outcomes, and simplifying hospital operations.
+                        </p>
+                    </div>
 
-    <!-- footer -->
-    <footer class="mt-5 py-4 bg-dark text-white">
-      <div class="container">
-        <div class="row">
-          <!-- About Section -->
-          <div class="col-md-4">
-            <h5 class="text-uppercase text-xl font-bold pb-2 pr-5">About Us</h5>
-            <p class="small text-justify">
-              We are dedicated to providing state-of-the-art healthcare
-              solutions, improving patient outcomes, and simplifying hospital
-              operations.
-            </p>
-          </div>
-
-          <!-- Quick Links -->
-          <div class="col-md-4  ps-5">
-            <h5 class="text-uppercase text-xl font-bold pb-2">Quick Links</h5>
-            <ul class="list-unstyled">
-              <li>
-                <a href="/about" class="text-white text-decoration-none small"
-                  >About Us</a
+                    <!-- Quick Links -->
+                    <div class="col-md-4  ps-5">
+                        <h5 class="text-uppercase text-xl font-bold pb-2">Quick Links</h5>
+                        <ul class="list-unstyled">
+                            <li>
+                                <a href="/about" class="text-white text-decoration-none small">About Us</a
                 >
               </li>
               <li>
@@ -148,14 +153,14 @@
               <a href="#" class="text-white me-3"
                 ><i class="fab fa-facebook-f"></i
               ></a>
-                        <a href="#" class="text-white me-3"><i class="fab fa-twitter"></i
+                                <a href="#" class="text-white me-3"><i class="fab fa-twitter"></i
               ></a>
-                        <a href="#" class="text-white me-3"><i class="fab fa-linkedin-in"></i
+                                <a href="#" class="text-white me-3"><i class="fab fa-linkedin-in"></i
               ></a>
-                        <a href="#" class="text-white"><i class="fab fa-instagram"></i
+                                <a href="#" class="text-white"><i class="fab fa-instagram"></i
               ></a>
-            </div>
-            </div>
+                    </div>
+                </div>
             </div>
 
             <!-- Footer Bottom -->
@@ -165,17 +170,17 @@
                 </p>
             </div>
             </div>
-            </footer>
+        </footer>
 
-            <!-- JavaScript Files -->
-            <script src="./app.js"></script>
-            <script src="./tailwind.config.js"></script>
-            <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.bundle.min.js"></script>
-            <script src="https://cdn.jsdelivr.net/npm/swiffy-slider@1.6.0/dist/js/swiffy-slider.min.js" crossorigin="anonymous" defer></script>
-            <!-- Font Awesome Script -->
-            <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/js/all.min.js" defer></script>
-            <script src="./doc_details.js"></script>
-            <!-- <script src="./auth.js"></script> -->
+        <!-- JavaScript Files -->
+        <script src="./app.js"></script>
+        <script src="./tailwind.config.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.bundle.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/swiffy-slider@1.6.0/dist/js/swiffy-slider.min.js" crossorigin="anonymous" defer></script>
+        <!-- Font Awesome Script -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/js/all.min.js" defer></script>
+        <script src="./doc_details.js"></script>
+        <!-- <script src="./auth.js"></script> -->
 </body>
 
 </html>
