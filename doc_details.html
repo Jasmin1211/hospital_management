@@ -123,6 +123,140 @@
       </div> -->
     </div>
 
+    <!-- Reviewer Slider -->
+    <div id="review-container-doctor" class="review-container p-3 mt-3">
+      <h1 class="title text-center text-4xl pb-4 font-bold">
+        What Patients Say
+      </h1>
+      <div
+        class="swiffy-slider slider-item-show4 slider-nav-outside slider-nav-dark slider-nav-sm slider-nav-visible slider-nav-page slider-item-snapstart slider-nav-autoplay slider-nav-autopause slider-item-ratio slider-item-ratio-contain bg-white shadow-lg py-3 py-lg-4"
+        data-slider-nav-autoplay-interval="2000"
+      >
+        <div class="slider-container" id="review-about-doctor-container">
+          <!-- Dynamic reviews will be appended here -->
+        </div>
+        <button type="button" class="slider-nav" aria-label="Go left"></button>
+        <button
+          type="button"
+          class="slider-nav slider-nav-next"
+          aria-label="Go right"
+        ></button>
+      </div>
+    </div>
+
+    <!-- patient model -->
+    <!-- Button trigger modal -->
+    <!-- <button
+      type="button"
+      class="btn btn-primary"
+      data-bs-toggle="modal"
+      data-bs-target="#staticBackdrop"
+    >
+      Launch static backdrop modal
+    </button> -->
+
+    <!-- Modal -->
+    <!-- Modal -->
+    <div
+      class="modal fade"
+      id="staticBackdrop"
+      data-bs-backdrop="static"
+      data-bs-keyboard="false"
+      tabindex="-1"
+      aria-labelledby="staticBackdropLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5
+              class="modal-title fs-4 text-dark font-bold"
+              id="staticBackdropLabel"
+            >
+              Take an Appointment
+            </h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+
+          <div class="modal-body">
+            <div class="d-flex justify-content-around mb-4">
+              <div class="form-check">
+                <input
+                  class="form-check-input"
+                  type="radio"
+                  name="mode"
+                  id="online"
+                  value="Online"
+                />
+                <label class="form-check-label font-semibold" for="online"
+                  >Online</label
+                >
+              </div>
+              <div class="form-check">
+                <input
+                  class="form-check-input"
+                  type="radio"
+                  name="mode"
+                  id="offline"
+                  value="Offline"
+                />
+                <label class="form-check-label font-semibold" for="offline"
+                  >Offline</label
+                >
+              </div>
+            </div>
+
+            <!-- Symptom input -->
+            <div class="mb-4">
+              <input
+                type="text"
+                id="symptom"
+                class="form-control font-semibold"
+                placeholder="Enter your synptom details..."
+              />
+            </div>
+
+            <!-- Time Selection -->
+            <div class="mb-4">
+              <select
+                id="time-select"
+                class="form-select font-semibold"
+                aria-label="Select Doctor's Available Time"
+              >
+                <!-- <option selected>Select Doctor's Available Time</option> -->
+                <!-- <option value="1">09:00 AM - 10:00 AM</option>
+                <option value="2">10:00 AM - 11:00 AM</option>
+                <option value="3">11:00 AM - 12:00 PM</option>
+                <option value="4">01:00 PM - 02:00 PM</option> -->
+              </select>
+            </div>
+          </div>
+
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary font-bold"
+              data-bs-dismiss="modal"
+            >
+              Close
+            </button>
+            <button
+              onclick="handleAppointment()"
+              type="button"
+              class="btn btn-primary font-bold"
+            >
+              Confirm Appointment
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <!-- footer -->
     <footer class="mt-5 py-4 bg-dark text-white">
       <div class="container">
@@ -222,5 +356,6 @@
       defer
     ></script>
     <script src="./doc_details.js"></script>
+    <script src="./auth.js"></script>
   </body>
 </html>

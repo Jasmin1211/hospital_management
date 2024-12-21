@@ -191,6 +191,9 @@ const loadReview = () => {
       .catch((error) => console.error("Error fetching reviews:", error));
   };
   
+
+
+//   display review
   const displayReview = (reviews) => {
     console.log(reviews);
     const parent = document.getElementById("review-container");

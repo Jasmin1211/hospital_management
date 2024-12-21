@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login - Hospital Management</title>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- Font Awesome -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+
+  <body class="bg-light">
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg bg-black navbar-dark py-3 shadow-lg">
+      <div class="container-fluid">
+        <!-- Brand Logo -->
+        <a class="navbar-brand text-white text-3xl font-bold" href="#">
+          <span class="text-primary">Hospital</span> System
+        </a>
+
+        <!-- Toggler for Mobile View -->
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNavDropdown"
+          aria-controls="navbarNavDropdown"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Navbar Links -->
+        <!-- <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link text-white hover:text-primary font-bold" href="#"
+              >Home</a
+            >
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white hover:text-primary font-bold" href="#"
+              >Services</a
+            >
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white hover:text-primary font-bold" href="#"
+              >Contact Us</a
+            >
+          </li>
+        </ul> -->
+
+        <!-- Align Logout to the Right -->
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a
+              class="nav-link text-white bg-primary px-3 py-2 font-bold rounded-md hover:bg-secondary"
+              href="./login.html"
+              >Login</a
+            >
+          </li>
+          <!-- <li class="nav-item">
+            <a
+              class="nav-link text-white bg-primary px-3 py-2 font-bold rounded-md hover:bg-secondary"
+              href="#"
+              >Logout</a
+            >
+          </li> -->
+        </ul>
+      </div>
+    </nav>
+
+    <!-- Registration Section -->
+    <div
+      class="d-flex justify-content-center align-items-center min-vh-90"
+      style="height: 80vh; overflow: hidden;"
+    >
+      <div class="col-md-6 col-12 bg-white p-4 shadow-lg rounded-4">
+        <h2 class="text-center mb-4 text-dark text-4xl font-bold">
+          User Registration
+        </h2>
+        <form action="#" method="POST">
+          <div class="row g-3">
+            <!-- Username -->
+            <div class="col-md-6">
+              <label for="username" class="form-label font-semibold text-lg"
+                >Username</label
+              >
+              <input
+                type="text"
+                class="form-control form-control-sm p-2 rounded-3 shadow-sm"
+                id="username"
+                name="username"
+                placeholder="Enter your username"
+                required
+              />
+            </div>
+
+            <!-- First Name -->
+            <div class="col-md-6">
+              <label for="first_name" class="form-label font-semibold text-lg"
+                >First Name</label
+              >
+              <input
+                type="text"
+                class="form-control form-control-sm p-2 rounded-3 shadow-sm"
+                id="first_name"
+                name="first_name"
+                placeholder="Enter your first name"
+                required
+              />
+            </div>
+
+            <!-- Last Name -->
+            <div class="col-md-6">
+              <label for="last_name" class="form-label font-semibold text-lg"
+                >Last Name</label
+              >
+              <input
+                type="text"
+                class="form-control form-control-sm p-2 rounded-3 shadow-sm"
+                id="last_name"
+                name="last_name"
+                placeholder="Enter your last name"
+                required
+              />
+            </div>
+
+            <!-- Email -->
+            <div class="col-md-6">
+              <label for="email" class="form-label font-semibold text-lg"
+                >Email</label
+              >
+              <input
+                type="email"
+                class="form-control form-control-sm p-2 rounded-3 shadow-sm"
+                id="email"
+                name="email"
+                placeholder="Enter your email"
+                required
+              />
+            </div>
+
+            <!-- Password -->
+            <div class="col-md-6">
+              <label for="password" class="form-label font-semibold text-lg"
+                >Password</label
+              >
+              <input
+                type="password"
+                class="form-control form-control-sm p-2 rounded-3 shadow-sm"
+                id="password"
+                name="password"
+                placeholder="Enter your password"
+                required
+              />
+            </div>
+
+            <!-- Confirm Password -->
+            <div class="col-md-6">
+              <label
+                for="confirm_password"
+                class="form-label font-semibold text-lg"
+                >Confirm Password</label
+              >
+              <input
+                type="password"
+                class="form-control form-control-sm p-2 rounded-3 shadow-sm"
+                id="confirm_password"
+                name="confirm_password"
+                placeholder="Confirm your password"
+                required
+              />
+            </div>
+
+            <!-- Terms & Conditions -->
+            <div class="col-12 form-check mb-1">
+              <input
+                type="checkbox"
+                class="form-check-input"
+                id="terms"
+                name="terms"
+              />
+              <label class="form-check-label font-semibold" for="terms"
+                >I agree to the Terms and Conditions</label
+              >
+            </div>
+
+            <!-- Submit Button -->
+            <div class="col-12">
+              <button
+                type="submit"
+                class="btn btn-primary w-100 font-serif p-2 rounded-3 shadow-sm transform transition-all duration-300 hover:scale-105"
+              >
+                Register
+              </button>
+            </div>
+
+            <!-- Links aligned in the same row -->
+            <div
+              class="col-12 d-flex justify-content-between mt-2 font-semibold text-sm"
+            >
+              <p>
+                <a href="./login.html" class="text-primary hover:underline"
+                  >Already have an account?</a
+                >
+              </p>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="mt-5 py-4 bg-dark text-white">
+      <div class="container text-center">
+        <p>&copy; 2024 Hospital Management System. All Rights Reserved.</p>
+        <div>
+          <a href="#" class="text-white me-3"
+            ><i class="fab fa-facebook"></i
+          ></a>
+          <a href="#" class="text-white me-3"><i class="fab fa-twitter"></i></a>
+          <a href="#" class="text-white me-3"
+            ><i class="fab fa-linkedin"></i
+          ></a>
+          <a href="#" class="text-white"><i class="fab fa-instagram"></i></a>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.bundle.min.js"></script>
+    <script src="./auth.js"></script>
+  </body>
+</html>

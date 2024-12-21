@@ -315,3 +315,135 @@ footer .social-icons a:hover {
   outline: none;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
 }
+
+/* make model for doctor  */
+#staticBackdropLabel {
+  text-align: center;
+}
+
+/* log in page  */
+/* Reset some default styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body styling */
+body {
+  font-family: "Open Sans", sans-serif;
+  background-color: #e9f1f7; /* Soft light blue for hospital theme */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+/* Login container (holds both form and image) */
+.login-container {
+  display: flex;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+  overflow: hidden;
+  width: 80%;
+  max-width: 1100px;
+}
+
+/* Login form styling */
+.login-form {
+  padding: 40px;
+  width: 50%;
+  background-color: #ffffff;
+}
+
+h2 {
+  font-size: 24px;
+  font-weight: 600;
+  color: #005d73; /* Darker blue to represent trust */
+  margin-bottom: 10px;
+}
+
+p {
+  font-size: 14px;
+  color: #6c757d; /* Grayish text color for calm feel */
+  margin-bottom: 30px;
+}
+
+.input-group {
+  margin-bottom: 20px;
+}
+
+.input-group label {
+  font-size: 14px;
+  color: #333;
+  margin-bottom: 5px;
+  display: block;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 12px;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+  font-size: 14px;
+  outline: none;
+}
+
+.input-group input:focus {
+  border-color: #005d73; /* Blue focus color for hospital branding */
+}
+
+.checkbox-group {
+  margin-bottom: 20px;
+}
+
+.checkbox-group input {
+  margin-right: 10px;
+}
+
+.login-btn {
+  width: 100%;
+  padding: 12px;
+  background-color: #007bff; /* Blue button color */
+  color: #fff;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.login-btn:hover {
+  background-color: #0056b3; /* Darker blue on hover */
+}
+
+.forgot-password {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.forgot-password a {
+  text-decoration: none;
+  color: #007bff;
+  font-size: 14px;
+}
+
+.forgot-password a:hover {
+  text-decoration: underline;
+}
+
+/* Image container styling */
+.image-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
+  background-color: #f0f7fa; /* Light blue background for hospital feel */
+}
+
+.image-container img {
+  max-width: 350px;
+  height: auto;
+  border-radius: 10px;
+}
