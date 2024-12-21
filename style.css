@@ -1,126 +1,186 @@
 /* Import Tailwind CSS Base Styles */
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 /* Carousel Styling */
+
 .carousel-inner img {
-  height: 80vh; /* Set a fixed height for the carousel images */
-  object-fit: cover; /* Ensure the image fills the space while maintaining its aspect ratio */
+  height: 80vh;
+  /* Set a fixed height for the carousel images */
+  object-fit: cover;
+  /* Ensure the image fills the space while maintaining its aspect ratio */
 }
 
 /* Service Section */
+
 .service-container {
-  width: 1200px; /* Fixed width for the service container */
-  margin: auto; /* Center the container horizontally */
+  width: 1200px;
+  /* Fixed width for the service container */
+  margin: auto;
+  /* Center the container horizontally */
 }
 
 /* Doctor Section */
+
 .doctor-container {
-  display: flex; /* Use flexbox for layout */
-  flex-wrap: wrap; /* Allow wrapping of doctor cards */
+  display: flex;
+  /* Use flexbox for layout */
+  flex-wrap: wrap;
+  /* Allow wrapping of doctor cards */
 }
 
 .filters {
-  background-color: #f8f9fa; /* Light background for the filters */
-  width: 25%; /* Occupy 25% of the container width */
+  background-color: #f8f9fa;
+  /* Light background for the filters */
+  width: 25%;
+  /* Occupy 25% of the container width */
 }
 
 .doctors {
-  width: 100%; /* Full width for doctor cards container */
+  width: 100%;
+  /* Full width for doctor cards container */
 }
 
 .doctor-img {
-  max-height: 10rem; /* Fixed maximum height for doctor images */
-  object-fit: cover; /* Maintain aspect ratio and fill the space */
+  max-height: 10rem;
+  /* Fixed maximum height for doctor images */
+  object-fit: cover;
+  /* Maintain aspect ratio and fill the space */
 }
 
 .doctor-card {
-  width: 100%; /* Full width in the Bootstrap column */
-  height: 100%; /* Consistent height for cards */
-  max-width: 18rem; /* Maximum width for individual cards */
-  min-height: 25rem; /* Minimum height for consistency */
-  transition: transform 0.3s ease-in-out; /* Smooth hover animation */
+  width: 100%;
+  /* Full width in the Bootstrap column */
+  height: 100%;
+  /* Consistent height for cards */
+  max-width: 18rem;
+  /* Maximum width for individual cards */
+  min-height: 25rem;
+  /* Minimum height for consistency */
+  transition: transform 0.3s ease-in-out;
+  /* Smooth hover animation */
 }
 
 .doctor-card:hover {
-  transform: scale(1.05); /* Slightly enlarge the card on hover */
+  transform: scale(1.05);
+  /* Slightly enlarge the card on hover */
 }
 
 .doctor-card .card-title {
-  font-size: 1.2rem; /* Larger font size for the card title */
-  font-weight: bold; /* Bold font for emphasis */
+  font-size: 1.2rem;
+  /* Larger font size for the card title */
+  font-weight: bold;
+  /* Bold font for emphasis */
 }
 
 .doctor-card .card-text {
-  font-size: 0.9rem; /* Smaller font size for description */
-  color: #4e4c4d; /* Grayish text color */
-  text-align: justify; /* Justify the text for a cleaner look */
+  font-size: 0.9rem;
+  /* Smaller font size for description */
+  color: #4e4c4d;
+  /* Grayish text color */
+  text-align: justify;
+  /* Justify the text for a cleaner look */
 }
 
 .card-body {
-  padding: 15px; /* Add padding inside the card body */
-  text-align: center; /* Center-align the content */
+  padding: 15px;
+  /* Add padding inside the card body */
+  text-align: center;
+  /* Center-align the content */
 }
 
 /* Search Bar */
+
 .search-bar input {
-  height: 40px; /* Height of the search input */
-  font-size: 1rem; /* Font size for readability */
-  border-radius: 5px; /* Rounded corners */
-  width: 95%; /* Almost full width */
+  height: 40px;
+  /* Height of the search input */
+  font-size: 1rem;
+  /* Font size for readability */
+  border-radius: 5px;
+  /* Rounded corners */
+  width: 95%;
+  /* Almost full width */
 }
 
 .row.g-4 {
-  gap: 20px; /* Add spacing between rows */
+  gap: 20px;
+  /* Add spacing between rows */
 }
 
 /* Specialization Buttons (Non-clickable) */
+
 .specialization-container {
-  display: flex; /* Flex layout for buttons */
-  flex-wrap: wrap; /* Allow wrapping to the next line */
-  justify-content: center; /* Center-align the buttons */
-  pointer-events: none; /* Disable clicking */
-  cursor: default; /* Change cursor to default */
+  display: flex;
+  /* Flex layout for buttons */
+  flex-wrap: wrap;
+  /* Allow wrapping to the next line */
+  justify-content: center;
+  /* Center-align the buttons */
+  pointer-events: none;
+  /* Disable clicking */
+  cursor: default;
+  /* Change cursor to default */
 }
 
 /* Search Bar Container */
+
 .search-bar {
   position: relative;
-  z-index: 10; /* Ensure it appears above other elements */
+  z-index: 10;
+  /* Ensure it appears above other elements */
 }
 
 /* Search Suggestions Dropdown */
+
 #search-suggestions {
-  position: absolute; /* Position the dropdown below the input */
-  top: calc(100% + 4px); /* Add a small margin below the input */
+  position: absolute;
+  /* Position the dropdown below the input */
+  top: calc(100% + 4px);
+  /* Add a small margin below the input */
   left: 0;
-  border: 1px solid #ddd; /* Light border for dropdown */
-  background-color: #fff; /* White background for dropdown */
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-  max-height: 200px; /* Limit height for scrolling */
-  overflow-y: auto; /* Enable vertical scrolling if needed */
+  border: 1px solid #ddd;
+  /* Light border for dropdown */
+  background-color: #fff;
+  /* White background for dropdown */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  /* Subtle shadow */
+  max-height: 200px;
+  /* Limit height for scrolling */
+  overflow-y: auto;
+  /* Enable vertical scrolling if needed */
 }
 
 #search-suggestions a {
-  display: block; /* Full-width clickable area */
-  padding: 10px; /* Add padding for better clickability */
-  text-decoration: none; /* Remove underline from links */
-  color: #000; /* Black text color */
+  display: block;
+  /* Full-width clickable area */
+  padding: 10px;
+  /* Add padding for better clickability */
+  text-decoration: none;
+  /* Remove underline from links */
+  color: #000;
+  /* Black text color */
 }
 
 #search-suggestions a:hover {
-  background-color: #f1f1f1; /* Highlight background on hover */
-  color: #000; /* Ensure text remains black */
+  background-color: #f1f1f1;
+  /* Highlight background on hover */
+  color: #000;
+  /* Ensure text remains black */
 }
 
 /* Restrict Search Input Width */
+
 .input-group {
-  max-width: 500px; /* Restrict maximum width */
-  width: 100%; /* Full width within the parent container */
+  max-width: 500px;
+  /* Restrict maximum width */
+  width: 100%;
+  /* Full width within the parent container */
 }
 
 /* Review Container */
+
 .review-container {
   text-align: center;
   padding: 20px;
@@ -128,6 +188,7 @@
 }
 
 /* Review Card Styling */
+
 .review-card {
   position: relative;
   /* width: 500px;
@@ -146,6 +207,7 @@
 }
 
 /* Image Styling */
+
 .image-container {
   width: 90px;
   height: 90px;
@@ -162,6 +224,7 @@
 }
 
 /* Reviewer Name */
+
 .reviewer-name {
   font-size: 1.5rem;
   font-weight: bold;
@@ -170,6 +233,7 @@
 }
 
 /* Review Text */
+
 .review-text {
   font-size: 1rem;
   color: #555;
@@ -179,6 +243,7 @@
 }
 
 /* Rating Section */
+
 .rating {
   font-size: 1.2rem;
   color: #f4b400;
@@ -186,6 +251,7 @@
 }
 
 /* Swiffy Slider Styling */
+
 .swiffy-slider {
   height: 470px;
 }
@@ -195,12 +261,14 @@
 }
 
 /* footer */
+
 footer {
   background-color: #00264d;
 }
 
 footer h5 {
-  color: #0d6efd; /* Highlighted headings */
+  color: #0d6efd;
+  /* Highlighted headings */
 }
 
 footer a {
@@ -223,8 +291,11 @@ footer .social-icons a:hover {
 }
 
 /* doctor details  */
+
 /* Container Styles */
+
 /* Container Styles */
+
 #doc-details-container {
   display: grid;
   grid-template-columns: 1fr 2fr;
@@ -232,7 +303,8 @@ footer .social-icons a:hover {
   max-width: 1200px;
   margin: 50px auto;
   padding: 20px;
-  background-color: #f8f9fa; /* Light background */
+  background-color: #f8f9fa;
+  /* Light background */
   border-radius: 12px;
   border: 1px solid #007bff;
   box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
@@ -241,7 +313,9 @@ footer .social-icons a:hover {
 .doctors-img {
   padding-top: 15px;
 }
+
 /* Doctor Image Section */
+
 .doctors-img img {
   width: 100%;
   max-width: 300px;
@@ -254,6 +328,7 @@ footer .social-icons a:hover {
 }
 
 /* Doctor Info Section */
+
 .doc-info {
   display: flex;
   flex-direction: column;
@@ -270,27 +345,32 @@ footer .social-icons a:hover {
 
 .doc-info h5 {
   font-size: 1.5rem;
-  color: #6c757d; /* Muted text for designation */
+  color: #6c757d;
+  /* Muted text for designation */
 }
 
 .doc-info h6 {
   font-size: 1.2rem;
-  color: #495057; /* Secondary text */
+  color: #495057;
+  /* Secondary text */
 }
 
 .doc-info p {
   font-size: 1rem;
-  color: #343a40; /* Darker text for description */
+  color: #343a40;
+  /* Darker text for description */
   line-height: 1.6;
 }
 
 .doc-info h4 {
   font-size: 1.2rem;
   font-weight: bold;
-  color: #007bff; /* Fee color */
+  color: #007bff;
+  /* Fee color */
 }
 
 /* Button Styles */
+
 .doc-info .btn {
   background-color: #000;
   color: #fff;
@@ -317,29 +397,34 @@ footer .social-icons a:hover {
 }
 
 /* make model for doctor  */
+
 #staticBackdropLabel {
   text-align: center;
 }
 
 /* log in page  */
+
 /* Reset some default styles */
-* {
+
+/* * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-}
+} */
 
 /* Body styling */
-body {
+
+/* body {
   font-family: "Open Sans", sans-serif;
-  background-color: #e9f1f7; /* Soft light blue for hospital theme */
+  background-color: #e9f1f7;
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
-}
+} */
 
 /* Login container (holds both form and image) */
+
 .login-container {
   display: flex;
   border-radius: 10px;
@@ -351,6 +436,7 @@ body {
 }
 
 /* Login form styling */
+
 .login-form {
   padding: 40px;
   width: 50%;
@@ -360,13 +446,13 @@ body {
 h2 {
   font-size: 24px;
   font-weight: 600;
-  color: #005d73; /* Darker blue to represent trust */
+  color: #005d73;
   margin-bottom: 10px;
 }
 
 p {
   font-size: 14px;
-  color: #6c757d; /* Grayish text color for calm feel */
+  color: #6c757d;
   margin-bottom: 30px;
 }
 
@@ -391,7 +477,7 @@ p {
 }
 
 .input-group input:focus {
-  border-color: #005d73; /* Blue focus color for hospital branding */
+  border-color: #005d73;
 }
 
 .checkbox-group {
@@ -405,7 +491,7 @@ p {
 .login-btn {
   width: 100%;
   padding: 12px;
-  background-color: #007bff; /* Blue button color */
+  background-color: #007bff;
   color: #fff;
   font-size: 16px;
   border: none;
@@ -415,7 +501,7 @@ p {
 }
 
 .login-btn:hover {
-  background-color: #0056b3; /* Darker blue on hover */
+  background-color: #0056b3;
 }
 
 .forgot-password {
@@ -431,19 +517,4 @@ p {
 
 .forgot-password a:hover {
   text-decoration: underline;
-}
-
-/* Image container styling */
-.image-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 40px;
-  background-color: #f0f7fa; /* Light blue background for hospital feel */
-}
-
-.image-container img {
-  max-width: 350px;
-  height: auto;
-  border-radius: 10px;
 }

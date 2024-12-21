@@ -190,19 +190,19 @@ const loadReview = () => {
     //   .then((data) => console.log(data))
       .catch((error) => console.error("Error fetching reviews:", error));
   };
-  
+
 
 
 //   display review
   const displayReview = (reviews) => {
     console.log(reviews);
     const parent = document.getElementById("review-container");
-  
+
     reviews.forEach((review) => {
         // const reviewer = reviewers.find(r => r.id === review.reviewer);
       const div = document.createElement("div");
       div.classList.add("review");
-  
+
       div.innerHTML = `
         <div class="review-card">
           <div class="image-container">
@@ -215,13 +215,13 @@ const loadReview = () => {
           <div class="rating">${review.rating}</div>
         </div>
       `;
-  
+
       parent.appendChild(div);
     });
   };
-  
 
-  
+
+
 
 
 // Initialize App
