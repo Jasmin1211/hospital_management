@@ -1,22 +1,20 @@
-// Handle Registration
-const handleRegistration = (event) => {
+const handleRegistration = async(event) => {
     event.preventDefault();
 
-    // Fetch input values
     const username = getValue("username");
     const first_name = getValue("first_name");
     const last_name = getValue("last_name");
     const email = getValue("email");
     const password = getValue("password");
     const confirm_password = getValue("confirm_password");
+    const phone_no = getValue("phone_no");
+    const image = document.getElementById("image").files[0]; // Get the file from the input
     const terms = document.getElementById("terms").checked;
 
-    // Error Message Container
     const errorContainer = document.getElementById("error");
     errorContainer.innerHTML = "";
 
-    // Validation
-    if (!username || !first_name || !last_name || !email || !password || !confirm_password) {
+    if (!username || !first_name || !last_name || !email || !password || !confirm_password || !phone_no || !image) {
         errorContainer.innerHTML = "All fields are required.";
         return;
     }
@@ -31,38 +29,79 @@ const handleRegistration = (event) => {
         return;
     }
 
-    // // Registration Successful Message
-    // alert("Registration Successful!");
+    // Create FormData and append form fields
+    const formData = new FormData();
+    formData.append("username", username);
+    formData.append("first_name", first_name);
+    formData.append("last_name", last_name);
+    formData.append("email", email);
+    formData.append("password", password);
+    formData.append("confirm_password", confirm_password);
+    formData.append("phone_no", phone_no);
+    formData.append("image", image); // Append the file
 
-    // Clear Form
-    document.getElementById("registrationForm").reset();
+    try {
+        const response = await fetch("http://127.0.0.1:8000/patient/register/", {
+            method: "POST",
+            body: formData, // Use FormData as the body
+        });
 
-    const info = {
-        username,
-        first_name,
-        last_name,
-        email,
-        password,
-        confirm_password,
-    };
+        const data = await response.json();
+        console.log(data);
+        console.log(image.size);
+        console.log("Server Response:", data);
 
-    if (password === confirm_password) {
-        fetch("https://hospital-management-with-rest-api.onrender.com/patient/register/", {
-                method: "POST",
-                headers: { 'Content-Type': 'application/json', },
-                body: JSON.stringify(info),
-            })
-            .then((res) => res.json())
-            .then((data) => console.log(data))
-
-
-
-    } else {
-        errorContainer.innerHTML = "Passwords do not match.";
-        return;
+        if (response.ok) {
+            alert(`Registration Successful! Your Patient ID is ${data.patient_id}`);
+            window.location.href = "login.html";
+        } else {
+            errorContainer.innerHTML = data.message || "Registration failed!";
+        }
+    } catch (error) {
+        console.error(error);
+        errorContainer.innerHTML = "Something went wrong. Please try again.";
     }
-    console.log(info);
 };
+
+
+// !end
+
+
+
+// *comment out
+//     // // Registration Successful Message
+//     // alert("Registration Successful!");
+
+//     // Clear Form
+//     document.getElementById("registrationForm").reset();
+
+//     // const info = {
+//     //     username,
+//     //     first_name,
+//     //     last_name,
+//     //     email,
+//     //     password,
+//     //     confirm_password,
+//     // };
+
+//     if (password === confirm_password) {
+//         fetch("https://hospital-management-with-rest-api.onrender.com/patient/register/", {
+//                 method: "POST",
+//                 headers: { 'Content-Type': 'application/json', },
+//                 body: JSON.stringify(info),
+//             })
+//             .then((res) => res.json())
+//             .then((data) => console.log(data))
+
+
+
+//     } else {
+//         errorContainer.innerHTML = "Passwords do not match.";
+//         return;
+//     }
+//     console.log(info);
+// };
+// *comment out 
 
 // Get Value from Input Field
 const getValue = (id) => {
@@ -102,8 +141,11 @@ const handelLogin = (event) => {
                 if (data.token && data.user_id) {
                     localStorage.setItem("token", data.token);
                     localStorage.setItem("user_id", data.user_id);
+                    localStorage.setItem("patient_id", data.patient_id);
                     window.location.href = "index.html";
 
+                } else {
+                    alert("Patient ID is missing. Please contact support.");
                 }
             })
             .catch((error) => {

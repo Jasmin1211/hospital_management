@@ -80,7 +80,7 @@
             novalidate
             id="registrationForm"
             action="#"
-            onsubmit="HandleRegistrations(event)"
+            onsubmit="handleRegistration(event)"
           >
             <p id="error" class="text-danger"></p>
             <div class="row g-3">
@@ -147,7 +147,26 @@
                 />
                 <small id="emailError" class="text-danger"></small>
               </div>
-
+              <!-- !updated -->
+              <div class="col-md-6">
+                <label for="phone_no" class="form-label font-semibold text-lg"
+                  >Phone Number</label
+                >
+                <input
+                  type="text"
+                  class="form-control"
+                  id="phone_no"
+                  placeholder="Enter phone number"
+                  required
+                />
+              </div>
+              <div class="col-md-6">
+                <label for="image" class="form-label font-semibold text-lg"
+                  >Profile Image</label
+                >
+                <input type="file" class="form-control" id="image" required />
+              </div>
+              <!-- !updated end -->
               <!-- Password -->
               <div class="col-md-6">
                 <label for="password" class="form-label font-semibold text-lg"

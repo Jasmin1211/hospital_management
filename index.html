@@ -98,13 +98,14 @@
             </li>
 
             <!-- Logout with a gap to the right -->
-            <li class="nav-item ms-4">
-              <a
+            <li id="auth-button" class="nav-item ms-4">
+              <!-- <a
+                onclick="event.preventDefault(); handleLogout();"
                 class="nav-link text-white bg-primary px-3 py-2 font-bold rounded-md hover:bg-secondary"
                 href="#"
               >
                 Logout
-              </a>
+              </a> -->
             </li>
           </ul>
         </div>
@@ -443,6 +444,7 @@
       defer
     ></script>
     <script src="./doc_details.js"></script>
-    <!-- <script src="./auth.js"></script> -->
+    <script src="./auth.js"></script>
+    <script src="./logout.js"></script>
   </body>
 </html>

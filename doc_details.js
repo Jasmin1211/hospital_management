@@ -103,57 +103,81 @@ const loadTime = (id) => {
         });
 };
 
-const handleAppointment = () => {
-    const params = new URLSearchParams(window.location.search).get("doctorId");
-    loadTime(params);
-    // Get all radio buttons with the name 'mode'
-    const status = document.getElementsByName("mode");
+const handleAppointment = async() => {
+    try {
+        const params = new URLSearchParams(window.location.search).get("doctorId");
+        loadTime(params);
 
-    // Convert the NodeList to an array and find the checked radio button
-    const selected = Array.from(status).find((button) => button.checked);
+        // Get selected radio button for appointment type
+        const status = document.getElementsByName("mode");
+        const selected = Array.from(status).find((button) => button.checked);
 
-    // Log the value of the selected radio button if it exists
-    // if (selected) {
-    //     console.log("Selected Mode:", selected.value);
-    // } else {
-    //     console.log("No mode selected");
-    // }
+        if (!selected) {
+            alert("Please select an appointment mode.");
+            return;
+        }
 
-    // Get the symptom input value
-    const symptom = document.getElementById("symptom").value;
-    // console.log("Symptom:", symptom);
+        // Get symptom input value
+        const symptom = document.getElementById("symptom").value;
+        if (!symptom) {
+            alert("Please enter symptoms.");
+            return;
+        }
 
-    // Get the selected time option
-    const timeSelect = document.getElementById("time-select");
-    const selectedTime = timeSelect.options[timeSelect.selectedIndex].value;
-    // console.log("Selected Time:", selectedTime);
+        // Get selected time option
+        const timeSelect = document.getElementById("time-select");
+        const selectedTime = timeSelect.options[timeSelect.selectedIndex].value;
+        if (!selectedTime) {
+            alert("Please select a time slot.");
+            return;
+        }
 
-    const info = {
-        // "id": 1,
-        appointment_types: selected.value,
-        appointment_status: "Pending",
-        symptom: symptom,
-        cancel: false,
-        patient: 1,
-        doctor: params,
-        time: timeSelect.value,
-    };
+        const patient_id = localStorage.getItem("patient_id");
+        if (!patient_id) {
+            alert("Patient Id not found. Please log in again.");
+            return;
+        }
 
-    console.log(info);
-    fetch("https://hospital-management-with-rest-api.onrender.com/appointment/", {
-        method: "POST",
-        headers: { 'Content-Type': 'application/json', },
-        body: JSON.stringify(info),
-    })
+        // Prepare request payload
+        const info = {
+            appointment_types: selected.value,
+            appointment_status: "Pending",
+            symptom: symptom,
+            cancel: false,
+            patient: parseInt(patient_id), // Ensure it's an integer
+            doctor: parseInt(params), // Ensure it's an integer
+            time: parseInt(selectedTime), // Ensure it's an integer
+        };
 
-    .then((res) => res.json())
-        .then((data) => {
-            console.log(data);
+        console.log("Sending Info:", info);
+
+        // Make POST request
+        const response = await fetch("https://hospital-management-with-rest-api.onrender.com/appointment/", {
+            method: "POST",
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(info),
         });
+
+        if (!response.ok) {
+            throw new Error(`HTTP error! Status: ${response.status}`);
+        }
+
+        const data = await response.json();
+        console.log("Appointment Created:", data);
+        alert("Appointment created successfully!");
+    } catch (error) {
+        console.error("Error:", error);
+        alert("Failed to create appointment. Please try again later.");
+    }
 };
 
 
 
+const loadPatientID = {
+
+}
 
 
 
