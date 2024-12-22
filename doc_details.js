@@ -175,9 +175,9 @@ const handleAppointment = async() => {
 
 
 
-const loadPatientID = {
+// const loadPatientID = {
 
-}
+// }
 
 
 

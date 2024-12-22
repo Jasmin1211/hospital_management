@@ -21,9 +21,9 @@ const loadUserDetails = () => {
                     <h5 class="text-muted font-semibold">${data.full_name}</h5>
                     <h6 class="text-secondary font-semibold">${data.email}</h6>
                     <div class="d-flex gap-3">
-                        <button class="btn btn-dark btn-lg font-bold">
-                            Update Profile
-                          </button>
+                        <a href="update_profile.html" class="btn btn-dark btn-lg font-bold">
+                    Updated Profile
+                </a>
 
                        <!-- Appointment button as a link -->
                 <a href="appointment.html" class="btn btn-dark btn-lg font-bold">

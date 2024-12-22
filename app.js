@@ -25,7 +25,7 @@ const DisplayService = (services) => {
                 <div class="card-body p-3">
                     <h3 class="card-title h5 font-bold">${service.name}</h3>
                     <p class="card-text text-justify pb-2">${service.description.slice(0, 150)}...</p>
-                    <div><a href="${service.link}" class="btn btn-primary font-semibold">Details</a></div>
+                    <div><a href="./service.html" class="btn btn-primary font-semibold">Details</a></div>
                 </div>
             </div>
         `;
