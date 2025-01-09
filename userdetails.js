@@ -1,15 +1,17 @@
 const loadUserDetails = () => {
-    const user_id = localStorage.getItem("user_id");
+  const user_id = localStorage.getItem("user_id");
 
-    fetch(`https://hospital-management-with-rest-api.onrender.com/user/usersList/${user_id}`)
-        .then((res) => res.json())
-        .then((data) => {
-            const parent = document.getElementById("user-container");
+  fetch(
+    `https://hospital-management-with-rest-api.onrender.com/user/usersList/${user_id}`
+  )
+    .then((res) => res.json())
+    .then((data) => {
+      const parent = document.getElementById("user-container");
 
-            const div = document.createElement("div");
-            div.classList.add("user-all", "doc-container", "oc-details-container");
+      const div = document.createElement("div");
+      div.classList.add("user-all", "doc-container", "oc-details-container");
 
-            div.innerHTML = `
+      div.innerHTML = `
                 <div id="profile-comtainer" class="doc-container oc-details-container">
                 <div class="profile-img">
                     <img src="./Images/profile.png" alt="Doctor Image" 
@@ -37,11 +39,11 @@ const loadUserDetails = () => {
             </div>
             `;
 
-            parent.appendChild(div);
-        })
-        .catch((error) => {
-            console.error('Error loading user details:', error);
-        });
+      parent.appendChild(div);
+    })
+    .catch((error) => {
+      console.error("Error loading user details:", error);
+    });
 };
 
 loadUserDetails();
